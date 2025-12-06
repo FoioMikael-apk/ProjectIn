@@ -1,0 +1,70 @@
+/* Responsividade e Destaque no React */
+
+.extrato-container {
+    max-width: 100%;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.lista-transacoes {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+.transacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.data-descricao {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.descricao {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 95%; /* Garante que o texto se encolha no mobile */
+}
+
+/* Destaque para Transações > R$ 5.000 */
+.transacao.destaque {
+    border: 2px solid #dc3545;
+    background-color: #fff0f0; 
+}
+.transacao.destaque .valor {
+    font-size: 1.2em;
+}
+
+/* Estilos de Valor */
+.valor-debito {
+    color: #dc3545;
+}
+.valor-credito {
+    color: #28a745;
+}
+
+/* Media Query para Desktop (ajuste de largura máxima) */
+@media (min-width: 600px) {
+    .extrato-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+}
